@@ -21,12 +21,9 @@ export default function Header() {
 
   return (
     <header className="relative z-50 flex-col py-[18px] bg-[#201C15] text-secondary">
-      {/* Top bar - hidden on mobile, visible on desktop */}
       <div className="justify-end py-1 hidden md:grid px-0 grid-cols-3 divide-x divide-gray-400 space-x-2" />
 
-      {/* Main navigation container */}
       <div className="flex justify-between items-center px-4">
-        {/* Logo */}
         <div>
           <Link to="/">
             <div className="relative block items-center justify-center overflow-hidden w-[129px]">
@@ -55,7 +52,6 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Desktop Navigation Menu */}
         <div className="hidden md:block">
           <div className="flex gap-2 lg:gap-8">
             {navLinks.map((link) => (
@@ -78,9 +74,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Right side buttons/icons */}
         <div>
-          {/* Mobile icons - visible on mobile only */}
           <div className="flex gap-[12px] md:hidden">
             <Link to="/appointment">
               <img
@@ -115,7 +109,6 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Desktop booking button */}
           <div className="hidden md:block">
             <Link to="/appointment">
               <button
@@ -138,7 +131,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Sidebar */}
       <div
         className={`
             fixed right-0 top-0 z-40 h-full p-4 overflow-y-auto w-[280px]
@@ -147,7 +139,6 @@ export default function Header() {
           `}
       >
         <div className="flex flex-col gap-2">
-          {/* Close button */}
           <div className="self-end">
             <button type="button" onClick={() => setMobileMenuOpen(false)}>
               <svg
@@ -174,7 +165,6 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Mobile menu links */}
           <div className="flex flex-col gap-4">
             <div className="flex">
               <Link to="/cart">

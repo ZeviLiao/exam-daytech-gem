@@ -5,7 +5,6 @@ import { GEMS_DATA } from '@/data/gems';
 
 type PageSize = 25 | 50 | 100;
 
-// Cut categories with icons
 const CUT_CATEGORIES = [
   { value: 'Round', label: '圓形', name: 'round' },
   { value: 'Square', label: '公主方形', name: 'princess' },
@@ -27,28 +26,23 @@ export default function GemListPage() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const productGridRef = useRef<HTMLDivElement>(null);
 
-  // Toggle cut filter
   const toggleCut = (cut: string) => {
     setSelectedCuts((prev) =>
       prev.includes(cut) ? prev.filter((c) => c !== cut) : [...prev, cut]
     );
-    setCurrentPage(1); // Reset to first page when filter changes
+    setCurrentPage(1);
   };
 
-  // Clear all filters
   const clearFilters = () => {
     setSelectedCuts([]);
     setCurrentPage(1);
   };
 
-  // Filter gems
   const filteredGems = useMemo(() => {
     let filtered = GEMS_DATA;
 
-    // Filter by cut
     if (selectedCuts.length > 0) {
       filtered = filtered.filter((gem) => {
-        // Handle "Other" category (Unknown + Triangle)
         if (selectedCuts.includes('Other')) {
           return selectedCuts.includes(gem.cut) || gem.cut === 'Unknown' || gem.cut === 'Triangle';
         }
@@ -59,7 +53,6 @@ export default function GemListPage() {
     return filtered;
   }, [selectedCuts]);
 
-  // Calculate pagination
   const totalPages = Math.ceil(filteredGems.length / pageSize);
 
   const paginatedGems = useMemo(() => {
@@ -68,10 +61,9 @@ export default function GemListPage() {
     return filteredGems.slice(startIndex, endIndex);
   }, [filteredGems, currentPage, pageSize]);
 
-  // Handle page size change
   const handlePageSizeChange = (newSize: PageSize) => {
     setPageSize(newSize);
-    setCurrentPage(1); // Reset to first page
+    setCurrentPage(1);
     setDropdownOpen(false);
   };
 
@@ -80,7 +72,6 @@ export default function GemListPage() {
   };
 
   const handlePageChange = (direction: 'prev' | 'next') => {
-    // Scroll to product grid instead of page top
     if (productGridRef.current) {
       productGridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
@@ -97,10 +88,8 @@ export default function GemListPage() {
   return (
     <div className="bg-[#fff] min-h-[400px]">
       <div className="flex flex-col lg:px-[120px] md:px-5 md:py-[92px] px-[20px] gap-4 mb-[30px]">
-        {/* Breadcrumb */}
         <Breadcrumb items={[{ label: '首頁', href: '/' }, { label: '寶石' }]} />
 
-        {/* Title and Description */}
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-5">
             <div className="text-mobileTitle md:text-title">寶石</div>
@@ -110,10 +99,8 @@ export default function GemListPage() {
             </div>
           </div>
 
-          {/* Filter Panel */}
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-8 rounded-[20px] bg-secondary-100 md:p-12 p-5">
-              {/* Icon Grid - 10 columns */}
               <div className="lg:flex grid lg:flex-row grid-cols-5 justify-center md:gap-[25px] gap-3">
                 {CUT_CATEGORIES.map(({ value, label, name }) => (
                   <button
@@ -142,7 +129,6 @@ export default function GemListPage() {
                 ))}
               </div>
 
-              {/* Clear Filter Button */}
               <div className="flex justify-end">
                 <button type="button" onClick={clearFilters}>
                   清除選項
@@ -151,14 +137,12 @@ export default function GemListPage() {
             </div>
           </div>
 
-          {/* Page Size Selector */}
           <div className="flex flex-row-reverse px-1">
             <div className="flex flex-col md:items-end items-center justify-between py-3 text-normal">
               <div className="py-3">總共: {filteredGems.length}件產品</div>
               <div className="flex items-center py-3">
                 顯示數量:
                 <div className="relative">
-                  {/* Dropdown Button */}
                   <button
                     type="button"
                     onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -190,7 +174,6 @@ export default function GemListPage() {
                     </div>
                   </button>
 
-                  {/* Dropdown Menu */}
                   <div className="absolute top-full left-0 z-20">
                     <div
                       className={`transition-all duration-300 overflow-hidden ${
@@ -237,7 +220,6 @@ export default function GemListPage() {
             </div>
           </div>
 
-          {/* Product Grid */}
           {paginatedGems.length === 0 ? (
             <div className="text-center py-20">
               <p className="text-lg text-gray-600 font-light">沒有找到符合條件的產品</p>
@@ -254,14 +236,11 @@ export default function GemListPage() {
               <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-5 gap-y-10">
                 {paginatedGems.map((gem) => (
                   <Link to={`/gem/${gem.id}`} key={gem.id} className="flex flex-col gap-2 group">
-                    {/* Image Container with Loading Skeleton */}
                     <div className="relative block items-center justify-center overflow-hidden w-full">
-                      {/* Loading Skeleton */}
                       {imageLoading[gem.id] !== false && (
                         <div className="absolute inset-0 animate-pulse bg-neutral-200 rounded-[inherit] pointer-events-none z-10" />
                       )}
 
-                      {/* Product Image */}
                       <img
                         draggable="false"
                         alt={gem.name}
@@ -280,7 +259,6 @@ export default function GemListPage() {
                         onLoad={() => handleImageLoad(gem.id)}
                       />
 
-                      {/* Badges */}
                       {gem.certified && (
                         <div className="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1">
                           認證
@@ -293,15 +271,11 @@ export default function GemListPage() {
                       )}
                     </div>
 
-                    {/* Product Info */}
                     <div className="flex flex-col gap-2">
-                      {/* Product Name */}
                       <h3 className="text-normal text-center">{gem.name}</h3>
 
-                      {/* Product Code - SKU */}
                       <div className="text-normal text-center">{gem.sku}</div>
 
-                      {/* Price */}
                       <div className="text-normal text-center text-[#BF9959] font-bold">
                         HK${gem.price.toLocaleString()}
                       </div>
@@ -310,10 +284,8 @@ export default function GemListPage() {
                 ))}
               </div>
 
-              {/* Pagination Controls */}
               {totalPages > 1 && (
                 <div className="mt-6 flex items-center justify-between text-sm">
-                  {/* Previous Button */}
                   <button
                     type="button"
                     onClick={() => handlePageChange('prev')}
@@ -323,12 +295,10 @@ export default function GemListPage() {
                     上一頁
                   </button>
 
-                  {/* Page Info */}
                   <div className="text-dark">
                     {currentPage} of {totalPages}
                   </div>
 
-                  {/* Next Button */}
                   <button
                     type="button"
                     onClick={() => handlePageChange('next')}

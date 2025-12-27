@@ -10,7 +10,6 @@ export default function GemDetailPage() {
   const gem = id ? getGemById(id) : undefined;
   const [selectedImage, setSelectedImage] = useState(0);
 
-  // Mock multiple images for gallery (in real app, this would come from gem data)
   const images = gem ? [gem.imageUrl, gem.imageUrl, gem.imageUrl, gem.imageUrl] : [];
 
   if (!gem) {
@@ -38,20 +37,15 @@ export default function GemDetailPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Breadcrumb */}
       <div className="bg-white">
         <div className="lg:px-[120px] md:px-5 px-[20px] pt-[20px]">
           <Breadcrumb items={breadcrumbItems} />
         </div>
       </div>
 
-      {/* Main Content */}
       <main className="lg:px-[120px] md:px-5 px-[20px] py-8">
-        {/* Two Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {/* Left Column - Images */}
           <div className="flex md:flex-row flex-col gap-4">
-            {/* Thumbnail Gallery - Vertical on desktop, horizontal on mobile */}
             <div className="flex md:flex-col flex-row gap-2 md:order-1 order-2">
               {images.map((image, idx) => {
                 const uniqueKey = `${image}-${idx}`;
@@ -76,7 +70,6 @@ export default function GemDetailPage() {
               })}
             </div>
 
-            {/* Main Image with Magnifier */}
             <div className="md:order-2 order-1 flex-1">
               <ImageMagnifier
                 src={images[selectedImage]}
@@ -87,9 +80,7 @@ export default function GemDetailPage() {
             </div>
           </div>
 
-          {/* Right Column - Product Info */}
           <div className="flex flex-col gap-6">
-            {/* Product Title */}
             <div>
               <h1 className="text-title2 md:text-heading mb-4">{gem.name}</h1>
               <div className="text-mobileTitle md:text-title text-primary mb-6">
@@ -97,7 +88,6 @@ export default function GemDetailPage() {
               </div>
             </div>
 
-            {/* Action Button */}
             <button
               type="button"
               disabled={!gem.inStock}
@@ -110,7 +100,6 @@ export default function GemDetailPage() {
               {gem.inStock ? '現貨' : '缺貨'}
             </button>
 
-            {/* Gem Size Input - Only show for in-stock items */}
             {gem.inStock && (
               <div>
                 <label htmlFor="gem-size" className="block text-normal text-gray-600 mb-2">
@@ -126,7 +115,6 @@ export default function GemDetailPage() {
               </div>
             )}
 
-            {/* Product Attributes Table */}
             <div className="bg-white border border-gray-400 rounded-[5px] p-4 w-3/4">
               <h2 className="text-[20px] mb-4">產品資料</h2>
               <div className="flex flex-col gap-3">
@@ -149,7 +137,6 @@ export default function GemDetailPage() {
               </div>
             </div>
 
-            {/* WhatsApp Button */}
             <button
               type="button"
               className="flex gap-2 items-center hover:bg-[#FFF9F0] transform duration-500 rounded-[5px] px-4 border justify-center border-[#D9C29B] border-solid cursor-pointer"
@@ -160,24 +147,23 @@ export default function GemDetailPage() {
           </div>
         </div>
 
-        {/* Product Details Section - Collapsible */}
         <Accordion title="產品細節" defaultOpen={true}>
           <div className="text-[14px] md:text-[16px]">
             <div className="flex flex-col gap-3 md:w-1/3">
               <div className="flex justify-start items-center">
-                <h6 className="flex-1 font-[400] text-normal">主石：</h6>
+                <h6 className="flex-1 font-normal text-normal">主石：</h6>
                 <div className="flex-1 text-left">
                   <p className="text-normal">{gem.category}</p>
                 </div>
               </div>
               <div className="flex justify-start items-center">
-                <h6 className="flex-1 font-[400] text-normal">主石克拉：</h6>
+                <h6 className="flex-1 font-normal text-normal">主石克拉：</h6>
                 <div className="flex-1 text-left">
                   <p className="text-normal">約{gem.weight}卡</p>
                 </div>
               </div>
               <div className="flex justify-start items-center">
-                <h6 className="flex-1 font-[400] text-normal">主石形狀：</h6>
+                <h6 className="flex-1 font-normal text-normal">主石形狀：</h6>
                 <div className="flex-1 text-left">
                   <p className="text-normal">{gem.cut}</p>
                 </div>
@@ -186,7 +172,6 @@ export default function GemDetailPage() {
           </div>
         </Accordion>
 
-        {/* Other Information Section - Collapsible */}
         <Accordion title="其他資訊" defaultOpen={true}>
           <div className="text-[14px] md:text-[16px]">
             <div className="flex flex-col gap-2">
@@ -203,7 +188,6 @@ export default function GemDetailPage() {
           </div>
         </Accordion>
 
-        {/* Featured Offers Banner */}
         <div className="flex flex-row justify-center py-10">
           <div
             className="flex flex-row w-full items-center p-5 bg-[#0a0a0a] rounded-[10px]"

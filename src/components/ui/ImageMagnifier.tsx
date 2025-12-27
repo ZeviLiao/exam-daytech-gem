@@ -38,13 +38,11 @@ export default function ImageMagnifier({
     setShowMagnifier(false);
   };
 
-  // Calculate magnifier size (1.2x of the image)
   const magnifierWidth = imgWidth * 1.2;
   const magnifierHeight = imgHeight * 1.2;
 
   return (
     <div className="relative w-full">
-      {/* Original Image Container with RWD */}
       <div
         ref={containerRef}
         className="relative w-full max-w-[600px] mx-auto aspect-square cursor-crosshair"
@@ -56,7 +54,6 @@ export default function ImageMagnifier({
       >
         <img src={src} alt={alt} className="w-full h-full object-cover" />
 
-        {/* Magnifier Overlay - 1.2x size, centered on image */}
         {showMagnifier && (
           <div
             style={{
