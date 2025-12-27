@@ -18,7 +18,7 @@ export default function GemDetailPage() {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-mobileTitle md:text-title mb-4">找不到寶石</h2>
-          <p className="text-mobileNormal md:text-normal mb-6">您查找的寶石不存在</p>
+          <p className="text-normal mb-6">您查找的寶石不存在</p>
           <Link
             to="/"
             className="inline-block px-6 py-3 bg-primary text-white hover:bg-secondary transition-colors"
@@ -101,7 +101,7 @@ export default function GemDetailPage() {
             <button
               type="button"
               disabled={!gem.inStock}
-              className={`w-full py-2 px-2 text-mobileNormal md:text-normal transition-colors duration-300 rounded-[5px] border border-solid text-center ${
+              className={`w-full py-2 px-2 text-normal transition-colors duration-300 rounded-[5px] border border-solid text-center ${
                 gem.inStock
                   ? 'bg-white text-primary hover:bg-[#FFF9F0] border-primary cursor-pointer'
                   : 'bg-[#E0E0E0] text-[#9E9E9E] border-[#E0E0E0] cursor-not-allowed'
@@ -113,10 +113,7 @@ export default function GemDetailPage() {
             {/* Gem Size Input - Only show for in-stock items */}
             {gem.inStock && (
               <div>
-                <label
-                  htmlFor="gem-size"
-                  className="block text-mobileNormal md:text-normal text-gray-600 mb-2"
-                >
+                <label htmlFor="gem-size" className="block text-normal text-gray-600 mb-2">
                   主石尺寸：
                 </label>
                 <input
@@ -124,7 +121,7 @@ export default function GemDetailPage() {
                   type="text"
                   value={`${gem.weight} 卡`}
                   readOnly
-                  className="w-1/2 py-2 px-4 text-mobileNormal md:text-normal text-primary border border-primary rounded-[5px] bg-white text-center cursor-pointer hover:bg-[#FFF9F0] transition-colors duration-300"
+                  className="w-1/2 py-2 px-4 text-normal text-primary border border-primary rounded-[5px] bg-white text-center cursor-pointer hover:bg-[#FFF9F0] transition-colors duration-300"
                 />
               </div>
             )}
@@ -134,24 +131,20 @@ export default function GemDetailPage() {
               <h2 className="text-[20px] mb-4">產品資料</h2>
               <div className="flex flex-col gap-3">
                 <div className="flex justify-start items-center border-b border-gray-300 pb-3">
-                  <div className="flex-1 text-mobileNormal md:text-normal">款號：</div>
-                  <div className="flex-1 text-mobileNormal md:text-normal text-left">{gem.sku}</div>
+                  <div className="flex-1 text-normal">款號：</div>
+                  <div className="flex-1 text-normal text-left">{gem.sku}</div>
                 </div>
                 <div className="flex justify-start items-center border-b border-gray-300 pb-3">
-                  <div className="flex-1 text-mobileNormal md:text-normal">主石：</div>
-                  <div className="flex-1 text-mobileNormal md:text-normal text-left">
-                    {gem.category}
-                  </div>
+                  <div className="flex-1 text-normal">主石：</div>
+                  <div className="flex-1 text-normal text-left">{gem.category}</div>
                 </div>
                 <div className="flex justify-start items-center border-b border-gray-300 pb-3">
-                  <div className="flex-1 text-mobileNormal md:text-normal">主石克拉：</div>
-                  <div className="flex-1 text-mobileNormal md:text-normal text-left">
-                    {gem.weight}卡
-                  </div>
+                  <div className="flex-1 text-normal">主石克拉：</div>
+                  <div className="flex-1 text-normal text-left">{gem.weight}卡</div>
                 </div>
                 <div className="flex justify-start items-center">
-                  <div className="flex-1 text-mobileNormal md:text-normal">主石形狀：</div>
-                  <div className="flex-1 text-mobileNormal md:text-normal text-left">{gem.cut}</div>
+                  <div className="flex-1 text-normal">主石形狀：</div>
+                  <div className="flex-1 text-normal text-left">{gem.cut}</div>
                 </div>
               </div>
             </div>
@@ -169,7 +162,7 @@ export default function GemDetailPage() {
 
         {/* Product Details Section - Collapsible */}
         <Accordion title="產品細節" defaultOpen={true}>
-          <div className="md:text-[16px] text-[14px]">
+          <div className="text-[14px] md:text-[16px]">
             <div className="flex flex-col gap-3 md:w-1/3">
               <div className="flex justify-start items-center">
                 <h6 className="flex-1 font-[400] text-normal">主石：</h6>
@@ -195,15 +188,15 @@ export default function GemDetailPage() {
 
         {/* Other Information Section - Collapsible */}
         <Accordion title="其他資訊" defaultOpen={true}>
-          <div className="md:text-[16px] text-[14px]">
+          <div className="text-[14px] md:text-[16px]">
             <div className="flex flex-col gap-2">
               <div className="text-[16px] underline">製作時間及運送細節</div>
-              <div className="md:text-[16px] text-[14px]">
+              <div className="text-[14px] md:text-[16px]">
                 ‧每件產品需大約 14 個工作天由專業工匠手工製作
               </div>
-              <div className="md:text-[16px] text-[14px]">‧出貨時間或受節日或運輸時間影響</div>
-              <div className="md:text-[16px] text-[14px]">‧您可選擇到店自取或以順豐到付</div>
-              <div className="md:text-[16px] text-[14px]">
+              <div className="text-[14px] md:text-[16px]">‧出貨時間或受節日或運輸時間影響</div>
+              <div className="text-[14px] md:text-[16px]">‧您可選擇到店自取或以順豐到付</div>
+              <div className="text-[14px] md:text-[16px]">
                 ‧主石及副石大小可能會因尺寸而有所變更。
               </div>
             </div>
@@ -224,7 +217,7 @@ export default function GemDetailPage() {
           >
             <div className="lg:px-12 flex flex-col gap-[20px] lg:gap-[22px] rounded-[10px] md:w-full w-1/2">
               <div className="text-mobileTitle md:text-title text-[#FFFFFF]">精選優惠</div>
-              <div className="text-mobileNormal md:text-normal font-light text-[#FFFFFF]">
+              <div className="text-normal font-light text-[#FFFFFF]">
                 精選優惠不時推出，為您帶來無限驚喜。 立即探索更多！
               </div>
               <div className="lg:block">

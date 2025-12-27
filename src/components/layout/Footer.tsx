@@ -68,7 +68,7 @@ export default function Footer() {
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className="text-secondary text-mobileNormal hover:text-primary transition-colors duration-300"
+                      className="text-secondary text-normal hover:text-primary transition-colors duration-300"
                     >
                       {link.label}
                     </Link>
@@ -93,15 +93,15 @@ export default function Footer() {
         </div>
 
         {/* Desktop Grid - visible only on medium screens and up */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[40px]">
+        <div className="hidden md:grid md:grid-cols-4 gap-[40px]">
           {/* Column 1 - Online Shopping */}
           <div className="flex flex-col gap-1 xl:gap-2 w-[130px]">
-            <h3 className="text-mobileNormal md:text-normal mb-4">網上選購</h3>
+            <h3 className="text-subtitle mb">網上選購</h3>
             <ul className="flex flex-col gap-1 xl:gap-2">
               <li>
                 <Link
                   to="/jewelry"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   珠寶產品
                 </Link>
@@ -109,7 +109,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/gold"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   黃金產品
                 </Link>
@@ -117,7 +117,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/gold-raw"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   裸金產品
                 </Link>
@@ -125,7 +125,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/diamonds"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   裸鑽
                 </Link>
@@ -135,12 +135,12 @@ export default function Footer() {
 
           {/* Column 2 - About Us */}
           <div className="flex flex-col gap-1 xl:gap-2 w-[130px]">
-            <h3 className="text-mobileNormal md:text-normal mb-4">關於我們</h3>
+            <h3 className="text-subtitle mb">關於我們</h3>
             <ul className="flex flex-col gap-1 xl:gap-2">
               <li>
                 <Link
                   to="/contact"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   聯絡我們
                 </Link>
@@ -148,7 +148,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/about"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   關於我們
                 </Link>
@@ -156,7 +156,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/store"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   店舖位置
                 </Link>
@@ -166,12 +166,12 @@ export default function Footer() {
 
           {/* Column 3 - Customer Area */}
           <div className="flex flex-col gap-1 xl:gap-2 w-[130px]">
-            <h3 className="text-mobileNormal md:text-normal mb-4">客戶專區</h3>
+            <h3 className="text-subtitle mb">客戶專區</h3>
             <ul className="flex flex-col gap-1 xl:gap-2">
               <li>
                 <Link
                   to="/member"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   會員優惠
                 </Link>
@@ -179,7 +179,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/shipping-returns"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   運送及退貨
                 </Link>
@@ -187,7 +187,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/privacy"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   私隱政策
                 </Link>
@@ -195,7 +195,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/faq"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   常見問題
                 </Link>
@@ -205,12 +205,12 @@ export default function Footer() {
 
           {/* Column 4 - Website Info */}
           <div className="flex flex-col gap-1 xl:gap-2 w-[130px]">
-            <h3 className="text-mobileNormal md:text-normal mb-4">關於網頁</h3>
+            <h3 className="text-subtitle mb">關於網頁</h3>
             <ul className="flex flex-col gap-1 xl:gap-2">
               <li>
                 <Link
                   to="/terms"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   條款及細則
                 </Link>
@@ -218,7 +218,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/privacy-policy"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   隱私政策
                 </Link>
@@ -226,7 +226,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/cookies"
-                  className="text-mobileNormal md:text-normal hover:text-primary transition-colors duration-300"
+                  className="text-normal hover:text-primary transition-colors duration-300"
                 >
                   Cookie 政策
                 </Link>
@@ -438,12 +438,8 @@ export default function Footer() {
 
         {/* Copyright Section */}
         <div className="text-center md:text-left w-full">
-          <p className="text-mobileNormal md:text-normal mb-2">
-            ©DAY KARKAL LTD 2024. ALL RIGHTS RESERVED
-          </p>
-          <p className="text-mobileNormal md:text-normal">
-            香港貴金屬及寶石業商會 B 類登記號: B-B-23-06-00567
-          </p>
+          <p className="text-normal mb-2">©DAY KARKAL LTD 2024. ALL RIGHTS RESERVED</p>
+          <p className="text-normal">香港貴金屬及寶石業商會 B 類登記號: B-B-23-06-00567</p>
         </div>
       </div>
     </footer>

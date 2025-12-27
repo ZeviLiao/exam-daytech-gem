@@ -103,8 +103,8 @@ export default function GemListPage() {
         {/* Title and Description */}
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-5">
-            <div className="md:text-title text-mobileTitle">寶石</div>
-            <div className="md:text-[16px] md:leading-5 text-mobileNormal">
+            <div className="text-mobileTitle md:text-title">寶石</div>
+            <div className="text-normal md:text-[16px] md:leading-5">
               在 Day
               Karkal，從輕奢日常到極致奢華的珠寶首飾均能一一找到。不論是鑽石、彩色寶石或其他單品，我們也能滿足您的需求。
             </div>
@@ -136,7 +136,7 @@ export default function GemListPage() {
                       loading="lazy"
                     />
                     <div className="md:p-[10px]">
-                      <div className="md:text-normal text-mobileNormal text-center">{label}</div>
+                      <div className="text-normal text-center">{label}</div>
                     </div>
                   </button>
                 ))}
@@ -153,7 +153,7 @@ export default function GemListPage() {
 
           {/* Page Size Selector */}
           <div className="flex flex-row-reverse px-1">
-            <div className="flex flex-col md:items-end items-center justify-between py-3 md:text-normal text-mobileNormal">
+            <div className="flex flex-col md:items-end items-center justify-between py-3 text-normal">
               <div className="py-3">總共: {filteredGems.length}件產品</div>
               <div className="flex items-center py-3">
                 顯示數量:
@@ -166,7 +166,7 @@ export default function GemListPage() {
                   >
                     <div className="flex justify-between items-center w-full">
                       <div></div>
-                      <h5 className="md:text-normal text-mobileNormal">{pageSize}</h5>
+                      <h5 className="text-normal">{pageSize}</h5>
                       <div
                         className={`transform duration-500 ${dropdownOpen ? 'rotate-180' : 'rotate-0'}`}
                       >
@@ -203,7 +203,7 @@ export default function GemListPage() {
                             <button
                               type="button"
                               onClick={() => handlePageSizeChange(25)}
-                              className="px-6 py-2 md:text-normal text-mobileNormal w-full border-b border-solid border-primary-500 hover:bg-gray-100"
+                              className="px-6 py-2 text-normal w-full border-b border-solid border-primary-500 hover:bg-gray-100"
                             >
                               25
                             </button>
@@ -212,7 +212,7 @@ export default function GemListPage() {
                             <button
                               type="button"
                               onClick={() => handlePageSizeChange(50)}
-                              className={`px-6 py-2 md:text-normal text-mobileNormal w-full ${
+                              className={`px-6 py-2 text-normal w-full ${
                                 pageSize !== 100 ? 'border-b border-solid border-primary-500' : ''
                               } hover:bg-gray-100`}
                             >
@@ -223,7 +223,7 @@ export default function GemListPage() {
                             <button
                               type="button"
                               onClick={() => handlePageSizeChange(100)}
-                              className="px-6 py-2 md:text-normal text-mobileNormal w-full hover:bg-gray-100"
+                              className="px-6 py-2 text-normal w-full hover:bg-gray-100"
                             >
                               100
                             </button>
@@ -296,13 +296,13 @@ export default function GemListPage() {
                     {/* Product Info */}
                     <div className="flex flex-col gap-2">
                       {/* Product Name */}
-                      <h3 className="md:text-normal text-mobileNormal text-center">{gem.name}</h3>
+                      <h3 className="text-normal text-center">{gem.name}</h3>
 
                       {/* Product Code - SKU */}
-                      <div className="md:text-normal text-mobileNormal text-center">{gem.sku}</div>
+                      <div className="text-normal text-center">{gem.sku}</div>
 
                       {/* Price */}
-                      <div className="md:text-normal text-mobileNormal text-center text-[#BF9959] font-bold">
+                      <div className="text-normal text-center text-[#BF9959] font-bold">
                         HK${gem.price.toLocaleString()}
                       </div>
                     </div>
