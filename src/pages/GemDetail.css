@@ -1,0 +1,372 @@
+.gem-detail-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.breadcrumb-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.breadcrumb a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: #764ba2;
+}
+
+.breadcrumb .separator {
+  color: #999;
+}
+
+.breadcrumb .current {
+  color: #333;
+  font-weight: 500;
+}
+
+/* Main Content */
+.gem-detail-content {
+  padding: 2rem;
+}
+
+.gem-detail-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.back-button {
+  background: white;
+  border: 2px solid #e0e0e0;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-button:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.gem-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Image Section */
+.gem-detail-image-section {
+  position: relative;
+}
+
+.gem-detail-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.gem-detail-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.certified-badge-large {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(52, 199, 89, 0.95);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Information Section */
+.gem-detail-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gem-category-tag-large {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: fit-content;
+}
+
+.gem-detail-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.gem-price-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-top: 2px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.gem-detail-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stock-status {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.stock-status.in-stock {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.stock-status.out-of-stock {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.gem-description h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.gem-description p {
+  line-height: 1.8;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+.gem-specifications h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.spec-label {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.spec-value {
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.gem-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  flex: 1;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+  background: white;
+  border: 2px solid #667eea;
+  color: #667eea;
+}
+
+.btn-secondary:hover {
+  background: #f8f9fa;
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gem-additional-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.info-card {
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+}
+
+.info-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+}
+
+.info-card p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Not Found */
+.not-found {
+  max-width: 600px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.not-found h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.not-found p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+.back-link:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .gem-detail-grid {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .gem-detail-title {
+    font-size: 2rem;
+  }
+
+  .gem-detail-price {
+    font-size: 2rem;
+  }
+
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .gem-detail-content {
+    padding: 1rem;
+  }
+
+  .gem-detail-grid {
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .gem-actions {
+    flex-direction: column;
+  }
+
+  .breadcrumb {
+    padding: 0.8rem 1rem;
+  }
+
+  .breadcrumb-container {
+    font-size: 0.85rem;
+  }
+}
