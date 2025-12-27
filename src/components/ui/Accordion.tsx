@@ -22,7 +22,7 @@ export default function Accordion({
       className={`flex flex-col ${
         isFooter
           ? 'py-2 border-b-[0.5px] border-secondary/20'
-          : 'py-4 md:px-10 border-b-[0.5px] border-[#D9C29B]'
+          : 'py-4 md:px-10 border-b-[0.5px] border-gold-light'
       }`}
     >
       <button
@@ -32,7 +32,9 @@ export default function Accordion({
       >
         <h5
           className={`${
-            isFooter ? 'text-secondary text-mobileNormal font-semibold' : 'text-[20px]'
+            isFooter
+              ? 'text-secondary text-mobileNormal font-semibold'
+              : 'text-mobileTitle md:text-title2'
           } text-left`}
         >
           {title}

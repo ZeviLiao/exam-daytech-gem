@@ -86,7 +86,7 @@ export default function GemDetailPage() {
         </div>
 
         <Accordion title="產品細節" defaultOpen={true}>
-          <div className="text-[14px] md:text-[16px]">
+          <div className="text-normal md:text-subtitle">
             <div className="flex flex-col gap-3 md:w-1/3">
               <div className="flex justify-start items-center">
                 <h6 className="flex-1 font-normal text-normal">主石：</h6>
@@ -111,15 +111,15 @@ export default function GemDetailPage() {
         </Accordion>
 
         <Accordion title="其他資訊" defaultOpen={true}>
-          <div className="text-[14px] md:text-[16px]">
+          <div className="text-normal md:text-subtitle">
             <div className="flex flex-col gap-2">
-              <div className="text-[16px] underline">製作時間及運送細節</div>
-              <div className="text-[14px] md:text-[16px]">
+              <div className="text-subtitle underline">製作時間及運送細節</div>
+              <div className="text-normal md:text-subtitle">
                 ‧每件產品需大約 14 個工作天由專業工匠手工製作
               </div>
-              <div className="text-[14px] md:text-[16px]">‧出貨時間或受節日或運輸時間影響</div>
-              <div className="text-[14px] md:text-[16px]">‧您可選擇到店自取或以順豐到付</div>
-              <div className="text-[14px] md:text-[16px]">
+              <div className="text-normal md:text-subtitle">‧出貨時間或受節日或運輸時間影響</div>
+              <div className="text-normal md:text-subtitle">‧您可選擇到店自取或以順豐到付</div>
+              <div className="text-normal md:text-subtitle">
                 ‧主石及副石大小可能會因尺寸而有所變更。
               </div>
             </div>

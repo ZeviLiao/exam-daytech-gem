@@ -20,7 +20,7 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="relative z-50 flex-col py-[18px] bg-[#201C15] text-secondary">
+    <header className="relative z-50 flex-col py-[18px] bg-dark text-secondary">
       <div className="justify-end py-1 hidden md:grid px-0 grid-cols-3 divide-x divide-gray-400 space-x-2" />
 
       <div className="flex justify-between items-center px-4">
@@ -60,12 +60,8 @@ export default function Header() {
                 to={link.path}
                 className={`
                     transition-all duration-100 border-b-2 text-xs md:text-sm
-                    ${
-                      isActive(link.path)
-                        ? 'border-[#BF9959]'
-                        : 'border-[#201C15] hover:border-[#BF9959]'
-                    }
-                    ${link.highlight ? 'text-[#E20000] font-[600]' : ''}
+                    ${isActive(link.path) ? 'border-gold' : 'border-dark hover:border-gold'}
+                    ${link.highlight ? 'text-highlight font-semibold' : ''}
                   `}
               >
                 {link.label}
@@ -113,7 +109,7 @@ export default function Header() {
             <Link to="/appointment">
               <button
                 type="button"
-                className="rounded-[5px] hover:bg-secondary-800 transform duration-500 bg-[#78480F] px-[12px] py-[8px] flex gap-3 items-center justify-center w-fit"
+                className="rounded-[5px] hover:bg-secondary-800 transform duration-500 bg-brown px-[12px] py-[8px] flex gap-3 items-center justify-center w-fit"
               >
                 <div>
                   <img
@@ -205,14 +201,14 @@ export default function Header() {
               </Link>
             </div>
 
-            <div className="h-[1px] bg-[#CECDCB] w-full" />
+            <div className="h-[1px] bg-divider w-full" />
 
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <div key={link.path} className="px-4 py-2 flex gap-2 items-center">
                   <Link
                     to={link.path}
-                    className={`text-body ${link.highlight ? 'text-[#c40000]' : 'text-dark'}`}
+                    className={`text-body ${link.highlight ? 'text-highlight' : 'text-dark'}`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}

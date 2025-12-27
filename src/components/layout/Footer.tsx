@@ -53,7 +53,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-dark text-light md:py-16 py-8">
-      <div className="flex flex-col bg-[#201C15] p-[28px] md:p-[100px] md:px-[150px] md:items-start items-center justify-center gap-[32px] md:gap-[40px]">
+      <div className="flex flex-col bg-dark p-[28px] md:p-[100px] md:px-[150px] md:items-start items-center justify-center gap-[32px] md:gap-[40px]">
         <div
           className="block md:hidden w-fit"
           style={{ borderBottom: '1px solid rgba(209, 175, 116, 0.60)' }}
@@ -89,7 +89,7 @@ export default function Footer() {
           <Link to="/appointment">
             <button
               type="button"
-              className="rounded-[5px] hover:bg-secondary-800 transform duration-500 bg-[#78480F] px-[12px] py-[8px] flex gap-3 items-center justify-center w-fit"
+              className="rounded-[5px] hover:bg-secondary-800 transform duration-500 bg-brown px-[12px] py-[8px] flex gap-3 items-center justify-center w-fit"
               style={{ minWidth: '135px' }}
             >
               <div className="text-secondary">預約到店</div>

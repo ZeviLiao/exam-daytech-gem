@@ -7,6 +7,15 @@
   --color-dark: #201c15;
   --color-cream: #fcfaf7;
   --color-light: #faf9f9;
+  --color-gold: #bf9959;
+  --color-gold-dark: #8a5d11;
+  --color-gold-light: #d9c29b;
+  --color-highlight: #e20000;
+  --color-brown: #78480f;
+  --color-hover-cream: #fff9f0;
+  --color-disabled-bg: #e0e0e0;
+  --color-disabled-text: #9e9e9e;
+  --color-divider: #cecdcb;
 }
 
 /* Font Face Definitions */
@@ -55,6 +64,10 @@
   .bg-dark { background-color: var(--color-dark); }
   .bg-cream { background-color: var(--color-cream); }
   .bg-light { background-color: var(--color-light); }
+  .bg-brown { background-color: var(--color-brown); }
+  .bg-hover-cream { background-color: var(--color-hover-cream); }
+  .bg-disabled { background-color: var(--color-disabled-bg); }
+  .bg-divider { background-color: var(--color-divider); }
 
   /* Text colors */
   .text-primary { color: var(--color-primary); }
@@ -62,6 +75,10 @@
   .text-dark { color: var(--color-dark); }
   .text-cream { color: var(--color-cream); }
   .text-light { color: var(--color-light); }
+  .text-gold { color: var(--color-gold); }
+  .text-gold-dark { color: var(--color-gold-dark); }
+  .text-highlight { color: var(--color-highlight); }
+  .text-disabled { color: var(--color-disabled-text); }
 
   /* Border colors */
   .border-primary { border-color: var(--color-primary); }
@@ -73,16 +90,23 @@
   .border-dark { border-color: var(--color-dark); }
   .border-cream { border-color: var(--color-cream); }
   .border-light { border-color: var(--color-light); }
+  .border-gold { border-color: var(--color-gold); }
+  .border-gold-dark { border-color: var(--color-gold-dark); }
+  .border-gold-light { border-color: var(--color-gold-light); }
+  .border-disabled { border-color: var(--color-disabled-bg); }
+  .border-divider { border-color: var(--color-divider); }
 
   /* Hover states */
   .hover\:bg-primary:hover { background-color: var(--color-primary); }
   .hover\:bg-secondary:hover { background-color: var(--color-secondary); }
   .hover\:bg-secondary-800:hover { background-color: #5a3508; }
+  .hover\:bg-hover-cream:hover { background-color: var(--color-hover-cream); }
   .hover\:text-primary:hover { color: var(--color-primary); }
   .hover\:text-secondary:hover { color: var(--color-secondary); }
   .hover\:border-primary:hover { border-color: var(--color-primary); }
   .hover\:border-light:hover { border-color: var(--color-light); }
   .hover\:border-secondary-500:hover { border-color: #9b6314; }
+  .hover\:border-gold:hover { border-color: var(--color-gold); }
 
   /* Focus states */
   .focus\:border-primary:focus { border-color: var(--color-primary); }

@@ -53,7 +53,7 @@ export default function GemCard({ gem, isLoading, onImageLoad }: GemCardProps) {
 
         <div className="text-normal text-center">{gem.sku}</div>
 
-        <div className="text-normal text-center text-[#BF9959] font-bold">
+        <div className="text-normal text-center text-gold font-bold">
           HK${gem.price.toLocaleString()}
         </div>
       </div>

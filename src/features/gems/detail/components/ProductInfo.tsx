@@ -29,8 +29,8 @@ export default function ProductInfo({ gem }: ProductInfoProps) {
         disabled={!gem.inStock}
         className={`w-full py-2 px-2 text-normal transition-colors duration-300 rounded-[5px] border border-solid text-center ${
           gem.inStock
-            ? 'bg-white text-primary hover:bg-[#FFF9F0] border-primary cursor-pointer'
-            : 'bg-[#E0E0E0] text-[#9E9E9E] border-[#E0E0E0] cursor-not-allowed'
+            ? 'bg-white text-primary hover:bg-hover-cream border-primary cursor-pointer'
+            : 'bg-disabled text-disabled border-disabled cursor-not-allowed'
         }`}
       >
         {gem.inStock ? '現貨' : '缺貨'}
@@ -46,7 +46,7 @@ export default function ProductInfo({ gem }: ProductInfoProps) {
             type="text"
             value={`${gem.weight} 卡`}
             readOnly
-            className="w-1/2 py-2 px-4 text-normal text-primary border border-primary rounded-[5px] bg-white text-center cursor-pointer hover:bg-[#FFF9F0] transition-colors duration-300"
+            className="w-1/2 py-2 px-4 text-normal text-primary border border-primary rounded-[5px] bg-white text-center cursor-pointer hover:bg-hover-cream transition-colors duration-300"
           />
         </div>
       )}
@@ -55,10 +55,10 @@ export default function ProductInfo({ gem }: ProductInfoProps) {
 
       <button
         type="button"
-        className="flex gap-2 items-center hover:bg-[#FFF9F0] transform duration-500 rounded-[5px] px-4 border justify-center border-[#D9C29B] border-solid cursor-pointer"
+        className="flex gap-2 items-center hover:bg-hover-cream transform duration-500 rounded-[5px] px-4 border justify-center border-gold-light border-solid cursor-pointer"
         style={{ width: '100%', padding: '10px' }}
       >
-        <div className="text-[14px] font-medium text-[#8A5D11]">WhatsApp查詢</div>
+        <div className="text-normal font-medium text-gold-dark">WhatsApp查詢</div>
       </button>
     </div>
   );

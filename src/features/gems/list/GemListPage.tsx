@@ -74,14 +74,14 @@ export default function GemListPage() {
   };
 
   return (
-    <div className="bg-[#fff] min-h-[400px]">
+    <div className="bg-white min-h-[400px]">
       <div className="flex flex-col lg:px-[120px] md:px-5 md:py-[92px] px-[20px] gap-4 mb-[30px]">
         <Breadcrumb items={[{ label: '首頁', href: '/' }, { label: '寶石' }]} />
 
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-5">
             <div className="text-mobileTitle md:text-title">寶石</div>
-            <div className="text-normal md:text-[16px] md:leading-5">
+            <div className="text-normal md:text-subtitle">
               在 Day
               Karkal，從輕奢日常到極致奢華的珠寶首飾均能一一找到。不論是鑽石、彩色寶石或其他單品，我們也能滿足您的需求。
             </div>
