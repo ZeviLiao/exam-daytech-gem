@@ -1,4 +1,4 @@
-import type { Gem } from '../types/gem';
+import type { Gem } from '@/types/gem';
 import gemsData from './gems.json';
 
 export const GEMS_DATA: Gem[] = gemsData as Gem[];

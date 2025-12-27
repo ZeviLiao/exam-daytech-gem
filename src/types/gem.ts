@@ -1,6 +1,7 @@
 export interface Gem {
   id: string;
   name: string;
+  sku: string;
   category: string;
   price: number;
   weight: number;
