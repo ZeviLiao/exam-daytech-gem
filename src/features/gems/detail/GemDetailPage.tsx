@@ -4,6 +4,8 @@ import Breadcrumb from '@/components/navigation/Breadcrumb';
 import Accordion from '@/components/ui/Accordion';
 import ImageMagnifier from '@/components/ui/ImageMagnifier';
 import { getGemById } from '@/data/gems';
+import PromotionBanner from '../components/PromotionBanner';
+import ProductInfo from './components/ProductInfo';
 
 export default function GemDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -80,71 +82,7 @@ export default function GemDetailPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-6">
-            <div>
-              <h1 className="text-title2 md:text-heading mb-4">{gem.name}</h1>
-              <div className="text-mobileTitle md:text-title text-primary mb-6">
-                HK${gem.price.toLocaleString()}
-              </div>
-            </div>
-
-            <button
-              type="button"
-              disabled={!gem.inStock}
-              className={`w-full py-2 px-2 text-normal transition-colors duration-300 rounded-[5px] border border-solid text-center ${
-                gem.inStock
-                  ? 'bg-white text-primary hover:bg-[#FFF9F0] border-primary cursor-pointer'
-                  : 'bg-[#E0E0E0] text-[#9E9E9E] border-[#E0E0E0] cursor-not-allowed'
-              }`}
-            >
-              {gem.inStock ? '現貨' : '缺貨'}
-            </button>
-
-            {gem.inStock && (
-              <div>
-                <label htmlFor="gem-size" className="block text-normal text-gray-600 mb-2">
-                  主石尺寸：
-                </label>
-                <input
-                  id="gem-size"
-                  type="text"
-                  value={`${gem.weight} 卡`}
-                  readOnly
-                  className="w-1/2 py-2 px-4 text-normal text-primary border border-primary rounded-[5px] bg-white text-center cursor-pointer hover:bg-[#FFF9F0] transition-colors duration-300"
-                />
-              </div>
-            )}
-
-            <div className="bg-white border border-gray-400 rounded-[5px] p-4 w-3/4">
-              <h2 className="text-[20px] mb-4">產品資料</h2>
-              <div className="flex flex-col gap-3">
-                <div className="flex justify-start items-center border-b border-gray-300 pb-3">
-                  <div className="flex-1 text-normal">款號：</div>
-                  <div className="flex-1 text-normal text-left">{gem.sku}</div>
-                </div>
-                <div className="flex justify-start items-center border-b border-gray-300 pb-3">
-                  <div className="flex-1 text-normal">主石：</div>
-                  <div className="flex-1 text-normal text-left">{gem.category}</div>
-                </div>
-                <div className="flex justify-start items-center border-b border-gray-300 pb-3">
-                  <div className="flex-1 text-normal">主石克拉：</div>
-                  <div className="flex-1 text-normal text-left">{gem.weight}卡</div>
-                </div>
-                <div className="flex justify-start items-center">
-                  <div className="flex-1 text-normal">主石形狀：</div>
-                  <div className="flex-1 text-normal text-left">{gem.cut}</div>
-                </div>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              className="flex gap-2 items-center hover:bg-[#FFF9F0] transform duration-500 rounded-[5px] px-4 border justify-center border-[#D9C29B] border-solid cursor-pointer"
-              style={{ width: '100%', padding: '10px' }}
-            >
-              <div className="text-[14px] font-medium text-[#8A5D11]">WhatsApp查詢</div>
-            </button>
-          </div>
+          <ProductInfo gem={gem} />
         </div>
 
         <Accordion title="產品細節" defaultOpen={true}>
@@ -188,35 +126,7 @@ export default function GemDetailPage() {
           </div>
         </Accordion>
 
-        <div className="flex flex-row justify-center py-10">
-          <div
-            className="flex flex-row w-full items-center p-5 bg-[#0a0a0a] rounded-[10px]"
-            style={{
-              backgroundImage: 'url(/productsSubBanner.jfif)',
-              backgroundColor: 'black',
-              backgroundPosition: 'center right -5rem',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'auto',
-            }}
-          >
-            <div className="lg:px-12 flex flex-col gap-[20px] lg:gap-[22px] rounded-[10px] md:w-full w-1/2">
-              <div className="text-mobileTitle md:text-title text-[#FFFFFF]">精選優惠</div>
-              <div className="text-normal font-light text-[#FFFFFF]">
-                精選優惠不時推出，為您帶來無限驚喜。 立即探索更多！
-              </div>
-              <div className="lg:block">
-                <Link to="/sale">
-                  <button
-                    className="hover:bg-neutral-400 text-[#FAF9F9] border-[#FAF9F9] flex gap-2 items-center transform duration-500 rounded-[5px] px-4 py-1 w-fit border justify-center border-solid"
-                    type="button"
-                  >
-                    立即前往
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+        <PromotionBanner />
       </main>
     </div>
   );
