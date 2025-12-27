@@ -32,7 +32,7 @@ export default function Accordion({
       >
         <h5
           className={`${
-            isFooter ? 'text-secondary text-[12px] font-semibold' : 'text-[20px]'
+            isFooter ? 'text-secondary text-mobileNormal font-semibold' : 'text-[20px]'
           } text-left`}
         >
           {title}

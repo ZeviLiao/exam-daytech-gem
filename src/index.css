@@ -9,6 +9,22 @@
   --color-light: #faf9f9;
 }
 
+/* Font Face Definitions */
+/* @font-face {
+  font-family: genwanmin;
+  src: url(/fonts/GenWanMinTJ-L.ttf);
+}
+
+@font-face {
+  font-family: NotoSansTCThin;
+  src: url(/fonts/NotoSansTC-Thin.otf);
+}
+
+@font-face {
+  font-family: NotoSansTCLight;
+  src: url(/fonts/NotoSansTC-Light.otf);
+} */
+
 @layer base {
   :root {
     font-synthesis: none;
@@ -18,6 +34,8 @@
   }
 
   body {
+    font-family: NotoSansTCLight, sans-serif;
+    font-weight: 400;
     background-color: #fcfaf7; /* cream */
     color: #201c15; /* dark */
     margin: 0;
@@ -71,7 +89,12 @@
   .text-cream\/90 { color: rgb(252 250 247 / 0.9); }
 
   /* Text sizes */
-  .text-body { font-size: 0.875rem; }
+  .text-body {
+    font-size: 14px;
+    line-height: 17.5px;
+    letter-spacing: 0.42px;
+    font-weight: 400;
+  }
   .text-heading {
     font-size: 36px;
     line-height: 45px;
@@ -103,16 +126,46 @@
     font-weight: 400;
   }
   .text-mobileNormal {
-    font-size: 11px;
-    line-height: 12.5px;
+    font-size: 14px;
+    line-height: 20px;
     letter-spacing: 0.3px;
     font-weight: 300;
   }
-  .text-mobileInput {
-    font-size: 12px;
-    line-height: 24px;
-    letter-spacing: 0.24px;
-    font-weight: 300;
+  .text-mobileSubtitle {
+    font-size: 16px;
+    line-height: 22.5px;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+  }
+  .text-mobileSubtitle2 {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.36px;
+    font-weight: 600;
+  }
+  .text-mobileTitle2 {
+    font-size: 18px;
+    line-height: 22.5px;
+    letter-spacing: 0.36px;
+    font-weight: 600;
+  }
+  .text-h1 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0.96px;
+    font-weight: 600;
+  }
+  .text-input {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.36px;
+    font-weight: 400;
+  }
+  .text-subtitle {
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.6px;
+    font-weight: 600;
   }
 
   /* Background with opacity */

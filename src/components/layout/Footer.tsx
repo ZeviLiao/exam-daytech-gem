@@ -68,7 +68,7 @@ export default function Footer() {
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className="text-secondary text-[10px] hover:text-primary transition-colors duration-300"
+                      className="text-secondary text-mobileNormal hover:text-primary transition-colors duration-300"
                     >
                       {link.label}
                     </Link>
