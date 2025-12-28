@@ -1,45 +1,269 @@
-/* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "tailwindcss";
+
+@theme {
+  /* Extend Tailwind's default color palette with custom colors */
+  --color-primary: #d1af74;
+  --color-secondary: #faf9f8; /* rgb(250 249 248) - light cream color for text on dark backgrounds */
+  --color-dark: #201c15;
+  --color-cream: #fcfaf7;
+  --color-light: #faf9f9;
+  --color-gold: #bf9959;
+  --color-gold-dark: #8a5d11;
+  --color-gold-light: #d9c29b;
+  --color-highlight: #e20000;
+  --color-brown: #78480f;
+  --color-hover-cream: #fff9f0;
+  --color-disabled-bg: #e0e0e0;
+  --color-disabled-text: #9e9e9e;
+  --color-divider: #cecdcb;
 }
 
-:root {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Font Face Definitions */
+/* @font-face {
+  font-family: genwanmin;
+  src: url(/fonts/GenWanMinTJ-L.ttf);
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background-color: #f8f9fa;
-  color: #1a1a1a;
+@font-face {
+  font-family: NotoSansTCThin;
+  src: url(/fonts/NotoSansTC-Thin.otf);
 }
 
-#root {
-  min-height: 100vh;
+@font-face {
+  font-family: NotoSansTCLight;
+  src: url(/fonts/NotoSansTC-Light.otf);
+} */
+
+@layer base {
+  :root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: NotoSansTCLight, sans-serif;
+    font-weight: 400;
+    background-color: #fcfaf7; /* cream */
+    color: #201c15; /* dark */
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
 }
 
-button {
-  font-family: inherit;
-}
+@layer utilities {
+  /* Background colors */
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .bg-secondary-100 { background-color: rgb(242 235 222); }
+  .bg-dark { background-color: var(--color-dark); }
+  .bg-cream { background-color: var(--color-cream); }
+  .bg-light { background-color: var(--color-light); }
+  .bg-brown { background-color: var(--color-brown); }
+  .bg-hover-cream { background-color: var(--color-hover-cream); }
+  .bg-disabled { background-color: var(--color-disabled-bg); }
+  .bg-divider { background-color: var(--color-divider); }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+  /* Text colors */
+  .text-primary { color: var(--color-primary); }
+  .text-secondary { color: var(--color-secondary); }
+  .text-dark { color: var(--color-dark); }
+  .text-cream { color: var(--color-cream); }
+  .text-light { color: var(--color-light); }
+  .text-gold { color: var(--color-gold); }
+  .text-gold-dark { color: var(--color-gold-dark); }
+  .text-highlight { color: var(--color-highlight); }
+  .text-disabled { color: var(--color-disabled-text); }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  /* Border colors */
+  .border-primary { border-color: var(--color-primary); }
+  .border-primary-500 { border-color: var(--color-primary); }
+  .border-secondary { border-color: var(--color-secondary); }
+  .border-secondary-100 { border-color: rgb(242 235 222); }
+  .border-secondary-700 { border-color: rgb(126 97 49); }
+  .border-neutral-300 { border-color: rgb(206 205 203); }
+  .border-dark { border-color: var(--color-dark); }
+  .border-cream { border-color: var(--color-cream); }
+  .border-light { border-color: var(--color-light); }
+  .border-gold { border-color: var(--color-gold); }
+  .border-gold-dark { border-color: var(--color-gold-dark); }
+  .border-gold-light { border-color: var(--color-gold-light); }
+  .border-disabled { border-color: var(--color-disabled-bg); }
+  .border-divider { border-color: var(--color-divider); }
+
+  /* Hover states */
+  .hover\:bg-primary:hover { background-color: var(--color-primary); }
+  .hover\:bg-secondary:hover { background-color: var(--color-secondary); }
+  .hover\:bg-secondary-800:hover { background-color: #5a3508; }
+  .hover\:bg-hover-cream:hover { background-color: var(--color-hover-cream); }
+  .hover\:text-primary:hover { color: var(--color-primary); }
+  .hover\:text-secondary:hover { color: var(--color-secondary); }
+  .hover\:border-primary:hover { border-color: var(--color-primary); }
+  .hover\:border-light:hover { border-color: var(--color-light); }
+  .hover\:border-secondary-500:hover { border-color: #9b6314; }
+  .hover\:border-gold:hover { border-color: var(--color-gold); }
+
+  /* Focus states */
+  .focus\:border-primary:focus { border-color: var(--color-primary); }
+
+  /* Opacity variants for text */
+  .text-cream\/50 { color: rgb(252 250 247 / 0.5); }
+  .text-cream\/70 { color: rgb(252 250 247 / 0.7); }
+  .text-cream\/90 { color: rgb(252 250 247 / 0.9); }
+
+  /* Text sizes */
+  .text-body {
+    font-size: 14px;
+    line-height: 17.5px;
+    letter-spacing: 0.42px;
+    font-weight: 400;
+  }
+  .text-heading {
+    font-size: 36px;
+    line-height: 45px;
+    letter-spacing: 1.08px;
+    font-weight: 600;
+  }
+  .text-title {
+    font-size: 28px;
+    line-height: 35px;
+    letter-spacing: 0.84px;
+    font-weight: 600;
+  }
+  .text-title2 {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.48px;
+    font-weight: 500;
+  }
+  .text-mobileTitle {
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.6px;
+    font-weight: 500;
+  }
+  .text-normal {
+    font-size: 14px;
+    line-height: 17.5px;
+    letter-spacing: 0.42px;
+    font-weight: 400;
+  }
+  .text-mobileNormal {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    font-weight: 300;
+  }
+  .text-mobileSubtitle {
+    font-size: 16px;
+    line-height: 22.5px;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+  }
+  .text-mobileSubtitle2 {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.36px;
+    font-weight: 600;
+  }
+  .text-mobileTitle2 {
+    font-size: 18px;
+    line-height: 22.5px;
+    letter-spacing: 0.36px;
+    font-weight: 600;
+  }
+  .text-h1 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0.96px;
+    font-weight: 600;
+  }
+  .text-input {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.36px;
+    font-weight: 400;
+  }
+  .text-subtitle {
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+  }
+
+  /* Background with opacity */
+  .bg-neutral-200 { background-color: rgb(229 229 229); }
+
+  /* Special divider */
+  .divide-gray-400 > * + * {
+    border-color: rgb(156 163 175);
+  }
+
+  /* Animations */
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Height utilities */
+  .rah-static {
+    overflow: hidden;
+  }
+
+  .rah-static--height-zero {
+    height: 0;
+  }
+
+  /* Scrollbar utilities */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Prose utilities for rich text */
+  .prose {
+    max-width: 65ch;
+  }
+
+  .prose-sm {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .prose-base {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
