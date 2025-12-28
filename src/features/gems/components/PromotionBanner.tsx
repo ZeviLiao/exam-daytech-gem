@@ -14,7 +14,7 @@ export default function PromotionBanner() {
         }}
       >
         <div className="lg:px-12 flex flex-col gap-[20px] lg:gap-[22px] rounded-[10px] md:w-full w-1/2">
-          <div className="text-[32px] font-bold text-[#FFFFFF]">精選優惠</div>
+          <div className="text-mobileTitle md:text-heading text-[#FFFFFF]">精選優惠</div>
           <div className="text-body lg:text-normal font-light text-[#FFFFFF]">
             精選優惠不時推出，為您帶來無限驚喜。 立即探索更多！
           </div>
