@@ -111,7 +111,10 @@ export default function GemListPage() {
             </div>
           ) : (
             <>
-              <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-5 gap-y-10">
+              <div
+                ref={productGridRef}
+                className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-5 gap-y-10"
+              >
                 {paginatedGems.map((gem) => (
                   <GemCard
                     key={gem.id}
