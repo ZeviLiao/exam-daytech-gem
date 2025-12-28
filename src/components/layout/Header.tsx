@@ -15,7 +15,7 @@ export default function Header() {
     { path: '/sale', label: 'SALE', highlight: true },
     { path: '/new', label: '新品上架' },
     { path: '/fashion', label: '時尚系列' },
-    { path: '/gems', label: '寶石' },
+    { path: '/', label: '寶石' },
     { path: '/diamonds', label: '鑽石' },
     { path: '/engagement', label: '求婚戒指' },
     { path: '/gold-prices', label: '黃金報價' },
@@ -40,7 +40,7 @@ export default function Header() {
       id: 'gems',
       icon: <StarIcon />,
       label: '寶石',
-      to: '/gems',
+      to: '/',
     },
     {
       id: 'fashion',

@@ -27,7 +27,7 @@ export default function Accordion({
     >
       <button
         type="button"
-        className={`flex justify-between items-center w-full ${isFooter ? 'px-4 py-2' : ''}`}
+        className={`flex justify-between items-center w-full cursor-pointer ${isFooter ? 'px-4 py-2' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <h5
@@ -45,7 +45,7 @@ export default function Accordion({
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={`transform duration-500 shrink-0 ${isOpen ? 'rotate-0' : 'rotate-180'}`}
+          className={`transform duration-500 shrink-0 opacity-40 ${isOpen ? 'rotate-0' : 'rotate-180'}`}
           aria-label="Toggle accordion"
         >
           <title>Toggle accordion</title>

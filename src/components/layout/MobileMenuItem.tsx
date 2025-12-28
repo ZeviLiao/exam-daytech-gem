@@ -32,15 +32,15 @@ export default function MobileMenuItem({
       <div className="flex flex-col">
         <button
           type="button"
-          className="px-4 py-2 flex justify-between"
+          className="px-4 py-2 flex justify-between items-center"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
             {icon}
             <div className={`text-body ${textColor}`}>{label}</div>
           </div>
           <div
-            className={`transform duration-500 origin-center ${isOpen ? 'rotate-0' : 'rotate-180'}`}
+            className={`transform duration-500 origin-center flex items-center ${isOpen ? 'rotate-0' : 'rotate-180'}`}
           >
             <svg
               width="11"

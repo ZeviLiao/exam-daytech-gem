@@ -22,7 +22,7 @@ export default function PageSizeSelector({ pageSize, onPageSizeChange }: PageSiz
         <button
           type="button"
           onClick={() => setDropdownOpen(!dropdownOpen)}
-          className="transform duration-500 px-6 py-2 text-left border border-solid border-primary-500 rounded-[5px] w-[120px] ml-2 text-sm"
+          className="transform duration-500 px-6 py-2 text-left border border-solid border-primary-500 rounded-[5px] w-[120px] ml-2 text-sm cursor-pointer"
         >
           <div className="flex justify-between items-center w-full">
             <div></div>
@@ -60,7 +60,7 @@ export default function PageSizeSelector({ pageSize, onPageSizeChange }: PageSiz
                   <button
                     type="button"
                     onClick={() => handlePageSizeChange(25)}
-                    className="px-6 py-2 text-normal w-full border-b border-solid border-primary-500 hover:bg-gray-100"
+                    className="px-6 py-2 text-normal w-full border-b border-solid border-primary-500 hover:bg-gray-100 cursor-pointer"
                   >
                     25
                   </button>
@@ -71,7 +71,7 @@ export default function PageSizeSelector({ pageSize, onPageSizeChange }: PageSiz
                     onClick={() => handlePageSizeChange(50)}
                     className={`px-6 py-2 text-normal w-full ${
                       pageSize !== 100 ? 'border-b border-solid border-primary-500' : ''
-                    } hover:bg-gray-100`}
+                    } hover:bg-gray-100 cursor-pointer`}
                   >
                     50
                   </button>
@@ -80,7 +80,7 @@ export default function PageSizeSelector({ pageSize, onPageSizeChange }: PageSiz
                   <button
                     type="button"
                     onClick={() => handlePageSizeChange(100)}
-                    className="px-6 py-2 text-normal w-full hover:bg-gray-100"
+                    className="px-6 py-2 text-normal w-full hover:bg-gray-100 cursor-pointer"
                   >
                     100
                   </button>

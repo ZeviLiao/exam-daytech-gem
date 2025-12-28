@@ -18,7 +18,7 @@ export default function ProductInfo({ gem }: ProductInfoProps) {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="text-title2 md:text-heading mb-4">{gem.name}</h1>
+        <h1 className="text-heading md:text-[40px] mb-4">{gem.name}</h1>
         <div className="text-mobileTitle md:text-title text-primary mb-6">
           HK${gem.price.toLocaleString()}
         </div>
@@ -55,9 +55,9 @@ export default function ProductInfo({ gem }: ProductInfoProps) {
 
       <button
         type="button"
-        className="flex gap-2 items-center hover:bg-hover-cream transform duration-500 rounded-[5px] px-4 border justify-center border-gold-light border-solid cursor-pointer"
-        style={{ width: '100%', padding: '10px' }}
+        className="w-full py-[10px] px-4 flex gap-2 items-center justify-center hover:bg-hover-cream transform duration-500 rounded-[5px] border border-solid border-gold-light cursor-pointer"
       >
+        <img src="/service.svg" alt="service" width={18} height={17} />
         <div className="text-normal font-medium text-gold-dark">WhatsApp查詢</div>
       </button>
     </div>

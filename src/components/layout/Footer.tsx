@@ -74,7 +74,7 @@ export default function Footer() {
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className="text-secondary text-normal hover:text-primary transition-colors duration-300"
+                      className="text-secondary text-normal hover:text-primary transition-colors duration-300 cursor-pointer"
                     >
                       {link.label}
                     </Link>
@@ -89,7 +89,7 @@ export default function Footer() {
           <Link to="/appointment">
             <button
               type="button"
-              className="rounded-[5px] hover:bg-secondary-800 transform duration-500 bg-brown px-[12px] py-[8px] flex gap-3 items-center justify-center w-fit"
+              className="rounded-[5px] hover:bg-secondary-800 transform duration-500 bg-brown px-[12px] py-[8px] flex gap-3 items-center justify-center w-fit cursor-pointer"
               style={{ minWidth: '135px' }}
             >
               <div className="text-secondary">預約到店</div>

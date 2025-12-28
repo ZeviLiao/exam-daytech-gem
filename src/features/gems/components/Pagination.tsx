@@ -15,7 +15,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         type="button"
         onClick={() => onPageChange('prev')}
         disabled={currentPage === 1}
-        className="text-dark hover:text-primary disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-300"
+        className="text-dark hover:text-primary disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors duration-300"
       >
         上一頁
       </button>
@@ -28,7 +28,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         type="button"
         onClick={() => onPageChange('next')}
         disabled={currentPage === totalPages}
-        className="text-dark hover:text-primary disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-300"
+        className="text-dark hover:text-primary disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors duration-300"
       >
         下一頁
       </button>

@@ -28,7 +28,7 @@ export default function CutFilter({ selectedCuts, onToggleCut, onClearFilters }:
               type="button"
               onClick={() => onToggleCut(value)}
               className={`
-                flex flex-col md:gap-6 gap-3 md:p-[10px] items-center justify-center hover:bg-[rgba(128,124,124,0.3)]
+                flex flex-col md:gap-6 gap-3 md:p-[10px] items-center justify-center hover:bg-[rgba(128,124,124,0.3)] cursor-pointer
                 ${
                   selectedCuts.includes(value) ? 'border-secondary-700' : 'border-secondary-100'
                 } border border-solid rounded-[10px] md:w-[100px]
@@ -50,7 +50,7 @@ export default function CutFilter({ selectedCuts, onToggleCut, onClearFilters }:
         </div>
 
         <div className="flex justify-end">
-          <button type="button" onClick={onClearFilters}>
+          <button type="button" onClick={onClearFilters} className="cursor-pointer">
             清除選項
           </button>
         </div>
