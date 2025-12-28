@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Breadcrumb from '@/components/navigation/Breadcrumb';
 import Accordion from '@/components/ui/Accordion';
@@ -11,6 +11,11 @@ export default function GemDetailPage() {
   const { id } = useParams<{ id: string }>();
   const gem = id ? getGemById(id) : undefined;
   const [selectedImage, setSelectedImage] = useState(0);
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Need to scroll on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [id]);
 
   const images = gem ? [gem.imageUrl, gem.imageUrl, gem.imageUrl, gem.imageUrl] : [];
 

@@ -60,17 +60,15 @@ export default function GemListPage() {
   };
 
   const handlePageChange = (direction: 'prev' | 'next') => {
-    if (productGridRef.current) {
-      productGridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
     if (direction === 'prev') {
       setCurrentPage((prev) => Math.max(1, prev - 1));
     } else {
       setCurrentPage((prev) => Math.min(totalPages, prev + 1));
     }
+
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 0);
   };
 
   return (
@@ -81,7 +79,7 @@ export default function GemListPage() {
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-5">
             <div className="text-mobileTitle md:text-title">寶石</div>
-            <div className="text-normal md:text-subtitle">
+            <div className="text-normal">
               在 Day
               Karkal，從輕奢日常到極致奢華的珠寶首飾均能一一找到。不論是鑽石、彩色寶石或其他單品，我們也能滿足您的需求。
             </div>
@@ -111,7 +109,10 @@ export default function GemListPage() {
             </div>
           ) : (
             <>
-              <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-5 gap-y-10">
+              <div
+                ref={productGridRef}
+                className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-5 gap-y-10"
+              >
                 {paginatedGems.map((gem) => (
                   <GemCard
                     key={gem.id}
